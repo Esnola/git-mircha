@@ -1,0 +1,8 @@
+.link--anchor{
+    padding: 12px
+}
+.ancla-activa{
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    }
