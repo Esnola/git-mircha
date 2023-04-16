@@ -1,8 +1,34 @@
-.link--anchor{
-    padding: 12px
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-.ancla-activa{
+
+#section-10-145 {
+    gap: 20px;
+}
+
+#div_block-257-145 {
+    position: sticky;
+    top: 12px;
+    width: 100%;
+    z-index: 100;
+    min-height: 200px;
+}
+
+#div_block-11-145 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 200px;
+}
+
+.link--anchor {
+    padding: 12px;
+    text-transform: uppercase;
+}
+
+.ancla-activa {
     font-size: 24px;
     font-weight: bold;
     color: red;
-    }
+}
