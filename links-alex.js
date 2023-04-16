@@ -37,7 +37,8 @@ document.addEventListener('DOMContentLoaded',() =>{
         posMaxPos = document.querySelector(posMax).offsetHeight
         topPosMax = posSecciones[posSecciones.length-1].posicion + posMaxPos 
        
-       if(scrollY > topPosMax || scrollY < posMin){
+        quitaClase()
+       if(scrollY > topPosMax || scrollY+diferencia < posMin){
         quitaClase()
         return
        }

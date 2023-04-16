@@ -8,12 +8,17 @@
     gap: 20px;
 }
 
-#div_block-257-145 {
+.enlaces-header {
+     margin-bottom: 50px;
+     background: #fff;
     position: sticky;
-    top: 12px;
+    top: 0;
     width: 100%;
     z-index: 100;
-    min-height: 200px;
+    min-height: 50px;
+    width: 75%;
+    border: 1px solid red;
+    text-align: center;
 }
 
 #div_block-11-145 {
@@ -21,7 +26,14 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 200px;
 }
-
+.service--wrapper{
+margin-left: 40px;
+width: 60%;
+padding: 30px;
+padding-top: 120px;
+padding-bottom: 200px;
+border: 1px solid green;
+}
 .link--anchor {
     padding: 12px;
     text-transform: uppercase;
