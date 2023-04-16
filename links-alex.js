@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded',() =>{
     const anclas_enlaces = document.querySelectorAll('.link--anchor')
     posSecciones = []
-    diferencia = 150
-    
-
+    diferencia = 100
     
     anclas_enlaces.forEach((r) => {
         objHref = r.getAttribute('href')
@@ -12,17 +10,11 @@ document.addEventListener('DOMContentLoaded',() =>{
         posSecciones.push({nombre: nomUbica , posicion: posTop})
     })
     
-   
     for(var clave in posSecciones) {
        console.log(clave +": " + posSecciones[clave].nombre);
        console.log(clave +": " + posSecciones[clave].posicion);
         
     }
-    /*
-    posSecciones.forEach((res,num) =>{
-        console.log('Numero: ' + num + ' Resultado ' + res.nombre);
-    })
-    */
     
     quitaClase = ()=>{
         anclas_enlaces.forEach((ancla) => {
@@ -30,32 +22,32 @@ document.addEventListener('DOMContentLoaded',() =>{
         })
     }
     
-    
     document.addEventListener('click',(e) => {
         quitaClase();
         if(e.target.classList.contains('link--anchor')) {
             enlace = e.target
             enlace.classList.add('ancla-activa')
-           /* 
-                var objetivo = enlace.getAttribute('href')
-                var posTop = document.querySelector(objetivo).offsetTop
-            */
         } 
     })
     document.addEventListener('scroll',()=>{
+        console.log(posSecciones.length)
+        quitaClase()
+        posMin = posSecciones[0].posicion
+        posMax = posSecciones[posSecciones.length-1].nombre
+        posMaxPos = document.querySelector(posMax).offsetHeight
+        topPosMax = posSecciones[posSecciones.length-1].posicion + posMaxPos 
+       
+       if(scrollY > topPosMax || scrollY < posMin){
+        quitaClase()
+        return
+       }
         for(var clave in posSecciones) {
-          //  console.log(clave +": " + posSecciones[clave].nombre);
-           // console.log(clave +": " + posSecciones[clave].posicion);
             posicionA  = posSecciones[clave].posicion
-            if(scrollY > posicionA){
+            if(scrollY + diferencia > posicionA){
                 quitaClase()
                 enlace = document.querySelector('a[href^="'+ posSecciones[clave].nombre +'"]')
-               // enlaceQuitar =document.querySelector('a[href^="'+ posSecciones[clave - 1].nombre +'"]')
-               // console.log(enlace)
-               //  enlaceQuitar
-                 enlace.classList.add('ancla-activa')
+                enlace.classList.add('ancla-activa')
             }
-            
          }
     })
 })
